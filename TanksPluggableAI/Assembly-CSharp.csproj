@@ -53,7 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PluggableAI\Scripts\Action.cs" />
      <Compile Include="Assets\PluggableAI\Scripts\EnemyStats.cs" />
+     <Compile Include="Assets\PluggableAI\Scripts\PatrolAction.cs" />
+     <Compile Include="Assets\PluggableAI\Scripts\State.cs" />
      <Compile Include="Assets\PluggableAI\Scripts\StateController.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />

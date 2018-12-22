@@ -6,16 +6,18 @@ using Complete;
 
 public class StateController : MonoBehaviour {
 
+    public State currentState;
+    public EnemyStats enemyStats;
+    public Transform eyes;
+    public State remainState;
 
-	public EnemyStats enemyStats;
-	public Transform eyes;
 
-
-	[HideInInspector] public NavMeshAgent navMeshAgent;
+    [HideInInspector] public NavMeshAgent navMeshAgent;
 	[HideInInspector] public Complete.TankShooting tankShooting;
 	[HideInInspector] public List<Transform> wayPointList;
+    [HideInInspector] public int nextWayPoint;
 
-	private bool aiActive;
+    private bool aiActive;
 
 
 	void Awake () 
@@ -36,5 +38,20 @@ public class StateController : MonoBehaviour {
 			navMeshAgent.enabled = false;
 		}
 	}
+
+    void Update()
+    {
+        if (!aiActive)
+            return;
+        currentState.UpdateState(this);
+    }
+    void OnDrawGizmos()
+    {
+        if (currentState != null && eyes != null)
+        {
+            Gizmos.color = currentState.sceneGizmoColor;
+            Gizmos.DrawWireSphere(eyes.position, enemyStats.lookSphereCastRadius);
+        }
+    }
 
 }
