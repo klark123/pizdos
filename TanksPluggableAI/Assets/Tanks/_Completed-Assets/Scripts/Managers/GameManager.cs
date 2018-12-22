@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +12,7 @@ namespace Complete
         public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
         public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
         public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
-        public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
+        //public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
         public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
 		public GameObject[] m_TankPrefabs;
         public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
@@ -72,7 +72,7 @@ namespace Complete
             }
 
             // These are the targets the camera should follow.
-            m_CameraControl.m_Targets = targets;
+            //m_CameraControl.m_Targets = targets;
         }
 
 
@@ -110,7 +110,7 @@ namespace Complete
             DisableTankControl ();
 
             // Snap the camera's zoom and position to something appropriate for the reset tanks.
-            m_CameraControl.SetStartPositionAndSize ();
+            //m_CameraControl.SetStartPositionAndSize ();
 
             // Increment the round number and display text showing the players what round it is.
             m_RoundNumber++;

@@ -28,7 +28,7 @@ namespace Complete
             Move ();
 
             // Change the size of the camera based.
-            Zoom ();
+            //Zoom ();
         }
 
 
@@ -71,12 +71,12 @@ namespace Complete
         }
 
 
-        private void Zoom ()
+        /*private void Zoom ()
         {
             // Find the required size based on the desired position and smoothly transition to that size.
             float requiredSize = FindRequiredSize();
-            m_Camera.orthographicSize = Mathf.SmoothDamp (m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
-        }
+            //m_Camera.orthographicSize = Mathf.SmoothDamp (m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
+        }*/
 
 
         private float FindRequiredSize ()
